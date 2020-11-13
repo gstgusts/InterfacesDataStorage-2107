@@ -34,6 +34,10 @@ public class Main {
             System.out.println(dog.getNickname());
         }
 
+        data.add(new Dog("Test suns", 1, "T12345678"));
+
+        repo.save(data);
+
 //        List<Dog> data = new ArrayList<>();
 //
 //        var dog1 = new Dog("Pēcis", 1d, "Ch124123");

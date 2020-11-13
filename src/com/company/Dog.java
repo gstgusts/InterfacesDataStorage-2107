@@ -1,5 +1,8 @@
 package com.company;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Dog {
     private String nickname;
     private double age;
@@ -36,5 +39,15 @@ public class Dog {
 
     public void setChipNumber(String chipNumber) {
         this.chipNumber = chipNumber;
+    }
+
+    public static Dog create(ResultSet rs) throws SQLException {
+        var dog = new Dog(
+                rs.getString("dog_nickname"),
+                rs.getDouble("dog_age"),
+                rs.getString("dog_chip_number")
+        );
+
+        return dog;
     }
 }
